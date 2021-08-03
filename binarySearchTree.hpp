@@ -238,7 +238,7 @@ void binarySearchTree<K, V>::postorderRecursiveHelp(tNode<K, V>* current) {
 
 template<typename K, typename V>
 int binarySearchTree<K, V>::getHeight() {
-    getHeightHelper(getRoot());
+    return getHeightHelper(getRoot());
 }
 
 template<typename K, typename V>

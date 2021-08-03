@@ -2,31 +2,14 @@
 // Program Name: Data Structure Implementations
 // Programming Language: C++
 // Project Start Date: 25 December, 2020
-// 
-// General Purpose: In this personal project, I demonstrate my knowledge in data structures
-//                  by implementing all of the structures I know using the C++ language. 
-// 
- //                      class and call their functions to test out how each class operates
-// 
-// Compile: g++ driver.cpp
-// Execute: ./a.out 
-// =====================================================================================================================================
-// 
-// 
-// =====================================================ABOUT THE AUTHOR================================================================
-// Author: Justin Bui
-// Email: jbui3493@gmail.com
-// Institution: California State University, Fullerton
 // =====================================================================================================================================
 // 
 // 
 // ======================================================COPYRIGHT/LICENSING============================================================
-// Copyright (C) 2020 Justin Bui
-// This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License
-// version 3 as published by the Free Software Foundation.
-// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
-// Warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-// A copy of the GNU General Public License v3 is available here:  <https://www.gnu.org/licenses/>.
+// Copyright (c) 2021 BuiTheBoi
+// Use of this source code is governed by an MIT-style
+// license that can be found in the LICENSE file or at
+// https://opensource.org/licenses/MIT.
 // =====================================================================================================================================
 
 // ==========================================================START OF MODULE============================================================
@@ -240,6 +223,8 @@ int main(){
     familyTree.remove(9);               
     familyTree.inorderRecursive();
 
+    cout << "The height of the tree is: " << familyTree.getHeight() << endl;
+    
     cout <<  endl << "We will now clear the tree" << endl;
     familyTree.clear();
     cout << "Is the tree now empty? " << (familyTree.empty() ? "Yes" : "No") << endl;
