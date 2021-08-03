@@ -11,7 +11,7 @@
 //   |_||_|  \___|\___|
 
 #include<iostream>
-
+#include <algorithm>
 template<typename K, typename V>
 struct tNode {      // Tree node 
     tNode<K, V>* left;
@@ -35,6 +35,7 @@ private:
     void postorderRecursiveHelp(tNode<K, V>*);
     void changeChild(tNode<K, V>*, tNode<K, V>*, tNode<K, V>*);
     void clearHelper(tNode<K, V>*);
+    int getHeightHelper(tNode<K, V>*);
 
 public:
     binarySearchTree(): root(nullptr) {}       // Constructor
@@ -55,7 +56,7 @@ public:
 
     // Getters
     tNode<K, V>* getRoot() { return root; }
-    size_t getHeight();
+    int getHeight();
     
 };
 
@@ -185,7 +186,7 @@ void binarySearchTree<K, V>::clear(){
 }
 
 
-// ==========================================RECURSIVE FUNCTIONS==============================================
+// ==========================================RECURSIVE FUNCTIONS AND HELPERS==============================================
 
 template<typename K, typename V>
 void binarySearchTree<K, V>::preorderRecursive(){
@@ -236,7 +237,16 @@ void binarySearchTree<K, V>::postorderRecursiveHelp(tNode<K, V>* current) {
 
 
 template<typename K, typename V>
-size_t binarySearchTree<K, V>::getHeight()
-{
+int binarySearchTree<K, V>::getHeight() {
+    getHeightHelper(getRoot());
+}
 
+template<typename K, typename V>
+int binarySearchTree<K, V>::getHeightHelper(tNode<K, V>* node) {
+    if (node == nullptr) return -1;
+
+    int leftHeight = getHeightHelper(node->left);
+    int rightHeight = getHeightHelper(node->right);
+
+    return 1 + max(leftHeight, rightHeight);
 }

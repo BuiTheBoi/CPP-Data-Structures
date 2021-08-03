@@ -2,7 +2,7 @@
  This repository is my C++ implementation of different data structures using 
  object oriented programming. This is somewhat of a replica of previous 
  repositories made by professors at my University, but some of the functions/structure
- may vary ([Original repo here!](https://github.com/BuiTheBoi/CPP-Data-Structures/blob/main/binarySearchTree.hpp))
+ may vary ([Original repo here!](https://github.com/CSUF-CPSC-Bein-FA20/CPSC-131-Data-Structures-code))
 
 
 
