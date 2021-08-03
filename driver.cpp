@@ -6,8 +6,7 @@
 // General Purpose: In this personal project, I demonstrate my knowledge in data structures
 //                  by implementing all of the structures I know using the C++ language. 
 // 
-// Moldule Description: In the driver file, I instantiate objects from each data structure
-//                      class and call their functions to test out how each class operates
+ //                      class and call their functions to test out how each class operates
 // 
 // Compile: g++ driver.cpp
 // Execute: ./a.out 

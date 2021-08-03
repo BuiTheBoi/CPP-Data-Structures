@@ -38,10 +38,9 @@ private:
 
 public:
     binarySearchTree(): root(nullptr) {}       // Constructor
-    //~binarySearchTree();
+    ~binarySearchTree() { clear(); }
 
     tNode<K, V>* search(K);
-    // size_t getHeight();
     bool empty();
 
     // Modifiers
@@ -53,6 +52,10 @@ public:
     void preorderRecursive();
     void inorderRecursive();
     void postorderRecursive();
+
+    // Getters
+    tNode<K, V>* getRoot() { return root; }
+    size_t getHeight();
     
 };
 
@@ -143,12 +146,13 @@ void binarySearchTree<K, V>::remove(K keyRemoved) {
         if (successor->parent->left == successor) successor->parent->left = nullptr;
         else if (successor->parent->right == successor) successor->parent->right = nullptr;
 
-        delete successor;   
+        delete successor;
+
     }
 
     // The 1 child is left
     else if (node->left != nullptr) {                           // CASE 3: Node has only 1 child (Whether left or right)
-        if (node == root) node->left = root;                    // SUB CASE: If node has 1 child and is root 
+        if (node == root) root = node->left;                    // SUB CASE: If node has 1 child and is root 
         else changeChild(node->parent, node, node->left);
     }
     // The 1 child is right
@@ -228,4 +232,11 @@ void binarySearchTree<K, V>::postorderRecursiveHelp(tNode<K, V>* current) {
         postorderRecursiveHelp(current->right);           // R
         std::cout << current->value << std::endl;         // V
     }
+}
+
+
+template<typename K, typename V>
+size_t binarySearchTree<K, V>::getHeight()
+{
+
 }
