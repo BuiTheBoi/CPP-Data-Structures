@@ -18,8 +18,9 @@
 #include<iomanip>
 #include<string>
 
-//Includes for data structures I implemented
 #include "moveOn.hpp"
+
+//Includes for data structures I implemented
 #include "singlyLinked.hpp"
 #include "doublyLinked.hpp"
 #include "stack.hpp"
